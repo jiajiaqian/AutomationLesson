@@ -1,0 +1,43 @@
+from tkinter import *
+import tkinter.messagebox as messagebox
+
+class Application(Frame):
+    def __init__(self, master=None):
+        Frame.__init__(self, master)
+        self.pack()
+        self.createWidgets()
+
+    def createWidgets(self):
+        self.nameInput = Entry(self)
+        self.nameInput.pack()
+        self.alertButton1 = Button(self, text='1', command=self.addone)
+        self.alertButton1.pack()
+        self.alertButton2 = Button(self, text='2', command=self.addtwo)
+        self.alertButton2.pack()
+        self.alertButton3 = Button(self, text='3', command=self.addthree)
+        self.alertButton3.pack()
+        self.alertButton4 = Button(self, text='4', command=self.addfour)
+        self.alertButton4.pack()
+        self.alertButton5 = Button(self, text='5', command=self.addfive)
+        self.alertButton5.pack
+
+    def addone(self):
+        self.nameInput.insert(END, 1)
+
+    def addtwo(self):
+        self.nameInput.insert(END, 2)
+
+    def addthree(self):
+        self.nameInput.insert(END, 3)
+
+    def addfour(self):
+        self.nameInput.insert(END, 4)
+
+    def addfive(self):
+        self.nameInput.insert(END, 5)
+
+app = Application()
+# 设置窗口标题:
+app.master.title('Hello World')
+# 主消息循环:
+app.mainloop()
